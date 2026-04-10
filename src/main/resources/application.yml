@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: aimock
+
+mock-ai:
+  rank:
+    delay-ms: 60000
+  avoid-intake:
+    delay-ms: 5000
+
+
+server:
+  port: 8091
+springdoc:
+  use-management-port: true
+management:
+  otlp:
+    metrics:
+      export:
+        enabled: false
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    prometheus:
+      access: read_only
+    health:
+      show-details: always
+  server:
+    port: 8092
